@@ -34,7 +34,6 @@ jobs:
       - name: Build
         run: |
           docker buildx build \
-                      -f tdx_installer/Dockerfile \
                       --push \
                       --platform ${ARCHITECTURES} \
                       --tag ${DOCKER_REPOSITORY}/gpxlogger:latest \

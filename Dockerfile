@@ -23,4 +23,5 @@ RUN echo "${GPSD_VERSION}"
 FROM ubuntu:20.04
 ARG GPSD_VERSION
 COPY --from=builder /gpsd-${GPSD_VERSION}/gpxlogger /usr/bin
-CMD /usr/bin/gpxlogger
+COPY entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
